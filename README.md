@@ -67,7 +67,6 @@ Create a `.env` file in the root directory:
 ```bash
 # Pinecone Configuration
 PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_ENVIRONMENT=your_pinecone_environment
 PINECONE_INDEX_NAME=rag-chatbot
 
 # OpenAI Configuration
@@ -98,7 +97,7 @@ load_dotenv()
 # Initialize Pinecone
 index = init_pinecone(
     api_key=os.getenv('PINECONE_API_KEY'),
-    environment=os.getenv('PINECONE_ENVIRONMENT'),
+    environment="",  # Not needed for new Pinecone SDK
     index_name=os.getenv('PINECONE_INDEX_NAME')
 )
 
@@ -222,7 +221,7 @@ def _extract_document_text(file_path: Path) -> str:
 
 #### `init_pinecone(api_key, environment, index_name, dimension=1536, metric="cosine")`
 
-Initialize and connect to Pinecone vector database.
+Initialize and connect to Pinecone vector database. Note: The environment parameter is no longer required for Pinecone SDK v3.0+.
 
 #### `ingest_documents(directory, embeddings_model, index, namespace="default")`
 
