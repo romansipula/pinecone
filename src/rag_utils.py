@@ -7,7 +7,6 @@ import logging
 from pathlib import Path
 
 import pinecone
-from pinecone import Pinecone, ServerlessSpec
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
@@ -35,25 +34,17 @@ def init_pinecone(
     Returns:
         Pinecone index object
     """
-    pc = Pinecone(api_key=api_key)
+    pinecone.init(api_key=api_key, environment=environment)
     
-    # Check if index exists
-    existing_indexes = pc.list_indexes()
-    index_names = [index.name for index in existing_indexes]
-    
-    if index_name not in index_names:
-        pc.create_index(
+    if index_name not in pinecone.list_indexes():
+        pinecone.create_index(
             name=index_name,
             dimension=dimension,
-            metric=metric,
-            spec=ServerlessSpec(
-                cloud="aws",
-                region="us-east-1"
-            )
+            metric=metric
         )
         logger.info(f"Created new index: {index_name}")
     
-    return pc.Index(index_name)
+    return pinecone.Index(index_name)
 
 
 def ingest_documents(
