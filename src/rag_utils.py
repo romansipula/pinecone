@@ -75,7 +75,7 @@ def ingest_documents(
     # Load documents from directory
     for file_path in Path(directory).glob("**/*"):
         if file_path.suffix.lower() == '.pdf':
-            text = _extract_pdf_text(file_path)
+            text = _extract_pdf_file(file_path)
         elif file_path.suffix.lower() == '.txt':
             text = _extract_text_file(file_path)
         else:
@@ -124,14 +124,18 @@ def query_context(
     Query Pinecone index for relevant context.
     
     Args:
-        query_text: Query text
-        embeddings_model: Name of embeddings model
-        index: Pinecone index object
-        namespace: Namespace to query
-        top_k: Number of results to return
+        query_text: Query text to search for
+        embeddings_model: Name of embeddings model to use
+        index: Pinecone index object to query
+        namespace: Namespace to query within the index
+        top_k: Number of most similar results to return
         
     Returns:
-        List of relevant context dictionaries
+        List of relevant context dictionaries containing:
+        - text: The text content
+        - score: Similarity score
+        - filename: Source filename
+        - chunk_id: Chunk identifier
     """
     model = SentenceTransformer(embeddings_model)
     query_embedding = model.encode([query_text])
@@ -155,8 +159,16 @@ def query_context(
     return contexts
 
 
-def _extract_pdf_text(file_path: Path) -> str:
-    """Extract text from PDF file."""
+def _extract_pdf_file(file_path: Path) -> str:
+    """
+    Extract text from PDF file.
+    
+    Args:
+        file_path: Path to the PDF file
+        
+    Returns:
+        Extracted text content from all pages
+    """
     text = ""
     with open(file_path, 'rb') as file:
         pdf_reader = PdfReader(file)
@@ -166,13 +178,31 @@ def _extract_pdf_text(file_path: Path) -> str:
 
 
 def _extract_text_file(file_path: Path) -> str:
-    """Extract text from text file."""
+    """
+    Extract text from text file.
+    
+    Args:
+        file_path: Path to the text file
+        
+    Returns:
+        File content as string
+    """
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
 
 def _split_text(text: str, chunk_size: int, chunk_overlap: int) -> List[str]:
-    """Split text into overlapping chunks."""
+    """
+    Split text into overlapping chunks.
+    
+    Args:
+        text: Text to split
+        chunk_size: Maximum size of each chunk
+        chunk_overlap: Number of characters to overlap between chunks
+        
+    Returns:
+        List of text chunks
+    """
     chunks = []
     start = 0
     

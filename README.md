@@ -40,64 +40,84 @@ A production-ready Retrieval-Augmented Generation (RAG) chatbot built with Pinec
 
 ## Quick Start
 
-### 1. Environment Setup
+For detailed setup instructions, see [SETUP.md](SETUP.md).
+
+### 1. Clone and Install
 
 ```bash
-# Clone the repository
-git clone <repository-url>
+git clone https://github.com/romansipula/pinecone.git
 cd pinecone
-
-# Create virtual environment
 python -m venv venv
-
-# Activate virtual environment
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
-
-# Install dependencies
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Environment Variables
-
-Create a `.env` file in the root directory:
+### 2. Configure Environment
 
 ```bash
-# Pinecone Configuration
-PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_INDEX_NAME=rag-chatbot
-
-# OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key
+cp .env.example .env
+# Edit .env with your API keys
 ```
 
-### 3. Document Ingestion
+### 3. Ingest Sample Data
 
-Place your PDF or text files in the `src/data/` directory, then run:
+The repository includes sample documents in `src/data/`:
+- `example.txt` - Comprehensive RAG system documentation
+- `sample_document.txt` - Additional sample content
 
 ```bash
-python -m src.scripts.ingest --data-dir src/data --embeddings-model all-MiniLM-L6-v2
+python src/scripts/ingest.py
 ```
 
 ### 4. Run the Chatbot
 
-```python
-import os
-from dotenv import load_dotenv
-from src.rag_utils import init_pinecone
-from src.agents.query_agent import QueryAgent
-from src.agents.retrieval_agent import RetrievalAgent
-from src.agents.generation_agent import GenerationAgent
+```bash
+python main.py
+```
 
-# Load environment variables
-load_dotenv()
+## Sample Usage
 
-# Initialize Pinecone
-index = init_pinecone(
-    api_key=os.getenv('PINECONE_API_KEY'),
-    environment="",  # Not needed for new Pinecone SDK
+Once the chatbot is running, you can ask questions about your ingested documents:
+
+```
+User: What is a RAG system?
+Bot: A RAG (Retrieval-Augmented Generation) system combines information retrieval 
+     with large language models to provide accurate, context-aware responses...
+
+User: How does vector search work?
+Bot: Vector search works by converting text into dense numerical representations 
+     called embeddings that capture semantic meaning...
+
+User: What are the key components mentioned?
+Bot: Based on the documents, the key components include:
+     1. Vector Database (Pinecone)
+     2. Embeddings Model (Sentence Transformers)
+     3. Language Model (OpenAI GPT)
+     4. Document Processing Pipeline...
+```
+
+## Adding Your Own Data
+
+1. Place your documents in `src/data/`:
+   ```
+   src/data/
+   ├── .gitkeep
+   ├── example.txt (included)
+   ├── your_document.pdf
+   ├── another_doc.txt
+   └── subfolder/
+       └── more_docs.pdf
+   ```
+
+2. Run ingestion:
+   ```bash
+   python src/scripts/ingest.py
+   ```
+
+3. Start chatting:
+   ```bash
+   python main.py
+   ```
     index_name=os.getenv('PINECONE_INDEX_NAME')
 )
 
