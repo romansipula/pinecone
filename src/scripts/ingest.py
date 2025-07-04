@@ -58,11 +58,10 @@ def main():
     
     # Get environment variables
     pinecone_api_key = os.getenv('PINECONE_API_KEY')
-    pinecone_env = os.getenv('PINECONE_ENVIRONMENT')
     index_name = os.getenv('PINECONE_INDEX_NAME', 'rag-chatbot')
     
-    if not pinecone_api_key or not pinecone_env:
-        logger.error("PINECONE_API_KEY and PINECONE_ENVIRONMENT must be set")
+    if not pinecone_api_key:
+        logger.error("PINECONE_API_KEY must be set")
         return
     
     # Check if data directory exists
@@ -84,7 +83,7 @@ def main():
         logger.info("Initializing Pinecone...")
         index = init_pinecone(
             api_key=pinecone_api_key,
-            environment=pinecone_env,
+            environment="",  # Not needed for new Pinecone SDK
             index_name=index_name,
             dimension=384,  # Dimension for all-MiniLM-L6-v2
             metric="cosine"

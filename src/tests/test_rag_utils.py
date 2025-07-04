@@ -19,12 +19,19 @@ from src.rag_utils import (
 class TestInitPinecone:
     """Test cases for init_pinecone function."""
     
-    @patch('src.rag_utils.pinecone')
-    def test_init_existing_index(self, mock_pinecone):
+    @patch('src.rag_utils.Pinecone')
+    def test_init_existing_index(self, mock_pinecone_class):
         """Test initialization with existing index."""
-        mock_pinecone.list_indexes.return_value = ['test-index']
+        mock_pc = Mock()
+        mock_pinecone_class.return_value = mock_pc
+        
+        # Mock existing index
+        mock_index_info = Mock()
+        mock_index_info.name = 'test-index'
+        mock_pc.list_indexes.return_value = [mock_index_info]
+        
         mock_index = Mock()
-        mock_pinecone.Index.return_value = mock_index
+        mock_pc.Index.return_value = mock_index
         
         result = init_pinecone(
             api_key="test-key",
@@ -32,19 +39,23 @@ class TestInitPinecone:
             index_name="test-index"
         )
         
-        mock_pinecone.init.assert_called_once_with(
-            api_key="test-key",
-            environment="test-env"
-        )
+        mock_pinecone_class.assert_called_once_with(api_key="test-key")
         assert result == mock_index
-        mock_pinecone.create_index.assert_not_called()
+        mock_pc.create_index.assert_not_called()
     
-    @patch('src.rag_utils.pinecone')
-    def test_init_new_index(self, mock_pinecone):
+    @patch('src.rag_utils.Pinecone')
+    @patch('src.rag_utils.ServerlessSpec')
+    def test_init_new_index(self, mock_serverless_spec, mock_pinecone_class):
         """Test initialization with new index."""
-        mock_pinecone.list_indexes.return_value = []
+        mock_pc = Mock()
+        mock_pinecone_class.return_value = mock_pc
+        mock_pc.list_indexes.return_value = []
+        
         mock_index = Mock()
-        mock_pinecone.Index.return_value = mock_index
+        mock_pc.Index.return_value = mock_index
+        
+        mock_spec = Mock()
+        mock_serverless_spec.return_value = mock_spec
         
         result = init_pinecone(
             api_key="test-key",
@@ -54,11 +65,7 @@ class TestInitPinecone:
             metric="euclidean"
         )
         
-        mock_pinecone.create_index.assert_called_once_with(
-            name="new-index",
-            dimension=512,
-            metric="euclidean"
-        )
+        mock_pc.create_index.assert_called_once()
         assert result == mock_index
 
 

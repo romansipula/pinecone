@@ -28,13 +28,12 @@ def main():
     
     # Get configuration
     pinecone_api_key = os.getenv('PINECONE_API_KEY')
-    pinecone_env = os.getenv('PINECONE_ENVIRONMENT')
     index_name = os.getenv('PINECONE_INDEX_NAME', 'rag-chatbot')
     openai_api_key = os.getenv('OPENAI_API_KEY')
     
-    if not all([pinecone_api_key, pinecone_env, openai_api_key]):
+    if not all([pinecone_api_key, openai_api_key]):
         logger.error("Missing required environment variables. Please check your .env file.")
-        logger.error("Required: PINECONE_API_KEY, PINECONE_ENVIRONMENT, OPENAI_API_KEY")
+        logger.error("Required: PINECONE_API_KEY, OPENAI_API_KEY")
         return
     
     try:
@@ -42,7 +41,7 @@ def main():
         logger.info("Initializing Pinecone...")
         index = init_pinecone(
             api_key=pinecone_api_key,
-            environment=pinecone_env,
+            environment="",  # Not needed for new Pinecone SDK
             index_name=index_name,
             dimension=384,  # For all-MiniLM-L6-v2
             metric="cosine"
