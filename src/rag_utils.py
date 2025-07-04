@@ -2,7 +2,7 @@
 RAG utilities for Pinecone vector database operations and document processing.
 """
 import os
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, TYPE_CHECKING
 import logging
 from pathlib import Path
 
@@ -10,6 +10,9 @@ import pinecone
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
+
+if TYPE_CHECKING:
+    from pinecone import Index
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +23,7 @@ def init_pinecone(
     index_name: str,
     dimension: int = 1536,
     metric: str = "cosine"
-) -> pinecone.Index:
+) -> "Index":
     """
     Initialize Pinecone client and create/connect to index.
     
@@ -50,7 +53,7 @@ def init_pinecone(
 def ingest_documents(
     directory: str,
     embeddings_model: str,
-    index: pinecone.Index,
+    index: "Index",
     namespace: str = "default",
     chunk_size: int = 1000,
     chunk_overlap: int = 200
@@ -113,7 +116,7 @@ def ingest_documents(
 def query_context(
     query_text: str,
     embeddings_model: str,
-    index: pinecone.Index,
+    index: "Index",
     namespace: str = "default",
     top_k: int = 5
 ) -> List[Dict[str, Any]]:

@@ -1,10 +1,13 @@
 """
 Retrieval agent for managing document retrieval operations.
 """
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, TYPE_CHECKING
 import logging
 
 from ..rag_utils import query_context
+
+if TYPE_CHECKING:
+    from pinecone import Index
 
 logger = logging.getLogger(__name__)
 
@@ -15,7 +18,7 @@ class RetrievalAgent:
     def __init__(
         self,
         embeddings_model: str,
-        index,
+        index: "Index",
         namespace: str = "default"
     ):
         """

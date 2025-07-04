@@ -6,6 +6,10 @@ from unittest.mock import Mock, patch, MagicMock
 from pathlib import Path
 import tempfile
 import os
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pinecone import Index
 
 from src.rag_utils import (
     init_pinecone,
@@ -75,7 +79,11 @@ class TestIngestDocuments:
         mock_transformer.return_value = mock_model
         mock_extract_text.return_value = "Test document content"
         mock_split_text.return_value = ["chunk1", "chunk2"]
-        mock_model.encode.return_value = [[0.1, 0.2], [0.3, 0.4]]
+        
+        # Create mock embeddings that have .tolist() method
+        import numpy as np
+        mock_embeddings = np.array([[0.1, 0.2], [0.3, 0.4]])
+        mock_model.encode.return_value = mock_embeddings
         
         mock_index = Mock()
         
@@ -127,7 +135,11 @@ class TestQueryContext:
         # Setup mocks
         mock_model = Mock()
         mock_transformer.return_value = mock_model
-        mock_model.encode.return_value = [[0.1, 0.2, 0.3]]
+        
+        # Create mock embedding that has .tolist() method
+        import numpy as np
+        mock_embedding = np.array([[0.1, 0.2, 0.3]])
+        mock_model.encode.return_value = mock_embedding
         
         mock_index = Mock()
         mock_index.query.return_value = {
@@ -183,11 +195,18 @@ class TestTextProcessing:
         with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as f:
             f.write("Test file content")
             f.flush()
+            temp_file_path = f.name
             
-            result = _extract_text_file(Path(f.name))
+        # File is now properly closed, safe to read and delete
+        try:
+            result = _extract_text_file(Path(temp_file_path))
             assert result == "Test file content"
-            
-            os.unlink(f.name)
+        finally:
+            # Ensure file is deleted even if test fails
+            try:
+                os.unlink(temp_file_path)
+            except (PermissionError, FileNotFoundError):
+                pass  # File might already be deleted or still in use
     
     def test_split_text(self):
         """Test text splitting."""

@@ -128,7 +128,7 @@ class TestRetrievalAgent:
         summary = self.agent.get_context_summary(contexts)
         
         assert summary['total'] == 3
-        assert summary['avg_score'] == 0.8
+        assert abs(summary['avg_score'] - 0.8) < 0.001  # Use approximate comparison
         assert set(summary['sources']) == {'test1.txt', 'test2.txt'}
         assert summary['score_range']['min'] == 0.7
         assert summary['score_range']['max'] == 0.9
