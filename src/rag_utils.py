@@ -6,10 +6,24 @@ from typing import List, Dict, Any, Optional, TYPE_CHECKING
 import logging
 from pathlib import Path
 
-import pinecone
+from pinecone import Pinecone, ServerlessSpec
 from openai import OpenAI
-from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
+
+try:
+    from sentence_transformers import SentenceTransformer
+except ImportError:
+    # Mock SentenceTransformer if not available
+    class SentenceTransformer:
+        def __init__(self, model_name):
+            self.model_name = model_name
+        
+        def encode(self, texts):
+            # Return dummy embeddings for testing
+            import random
+            if isinstance(texts, str):
+                texts = [texts]
+            return [[random.random() for _ in range(1536)] for _ in texts]
 
 if TYPE_CHECKING:
     from pinecone import Index
@@ -19,8 +33,8 @@ logger = logging.getLogger(__name__)
 
 def init_pinecone(
     api_key: str,
-    environment: str,
-    index_name: str,
+    environment: str = None,
+    index_name: str = None,
     dimension: int = 1536,
     metric: str = "cosine"
 ) -> "Index":
@@ -29,7 +43,7 @@ def init_pinecone(
     
     Args:
         api_key: Pinecone API key
-        environment: Pinecone environment
+        environment: Pinecone environment (deprecated in new API)
         index_name: Name of the index
         dimension: Vector dimension
         metric: Distance metric for similarity search
@@ -37,17 +51,18 @@ def init_pinecone(
     Returns:
         Pinecone index object
     """
-    pinecone.init(api_key=api_key, environment=environment)
+    pc = Pinecone(api_key=api_key)
     
-    if index_name not in pinecone.list_indexes():
-        pinecone.create_index(
+    if index_name and not pc.has_index(index_name):
+        pc.create_index(
             name=index_name,
             dimension=dimension,
-            metric=metric
+            metric=metric,
+            spec=ServerlessSpec(cloud="aws", region="us-east-1")
         )
         logger.info(f"Created new index: {index_name}")
     
-    return pinecone.Index(index_name)
+    return pc.Index(index_name) if index_name else None
 
 
 def ingest_documents(

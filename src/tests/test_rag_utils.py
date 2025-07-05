@@ -1,23 +1,19 @@
 """
-Tests for rag_utils module.
+Unit tests for RAG utilities module.
 """
 import pytest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch, MagicMock, mock_open
 from pathlib import Path
 import tempfile
 import os
 import numpy as np
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from pinecone import Index
 
 from src.rag_utils import (
     init_pinecone,
     ingest_documents,
     query_context,
-    _extract_text_file,
     _extract_pdf_file,
+    _extract_text_file,
     _split_text
 )
 
