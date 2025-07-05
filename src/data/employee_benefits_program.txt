@@ -1,0 +1,361 @@
+COMPREHENSIVE EMPLOYEE BENEFITS PROGRAM
+========================================
+
+Document Version: 3.2
+Effective Date: January 1, 2025
+Last Updated: July 5, 2025
+Next Review Date: January 1, 2026
+
+TABLE OF CONTENTS
+=================
+1. Program Overview
+2. Bicycle Purchase Benefits Program
+3. Vacation Day Escalation System
+4. Health Insurance Contribution Program
+5. Gym Membership Reimbursement
+6. Professional Development Budget
+7. Home Office Allowance Program
+8. 401(k) Matching Program
+9. Childcare Assistance Program
+10. Transportation Subsidy Program
+11. Eligibility Requirements and Definitions
+12. Calculation Examples and Edge Cases
+13. Policy Changes and Effective Dates
+
+1. PROGRAM OVERVIEW
+===================
+
+This comprehensive benefits program is designed to reward employee loyalty, support work-life balance, and invest in professional growth. All benefits are calculated using multiple factors including years of service, position level, and specific eligibility criteria.
+
+Position Classifications:
+- Entry-Level: New hires, interns, junior positions (0-2 years experience)
+- Mid-Level: Experienced professionals, coordinators, specialists (3-7 years experience)
+- Senior: Senior specialists, managers, team leads (8-15 years experience)
+- Executive: Directors, VPs, C-suite (16+ years experience)
+
+2. BICYCLE PURCHASE BENEFITS PROGRAM
+====================================
+
+The Bicycle Purchase Benefits Program encourages sustainable transportation and healthy lifestyle choices through a comprehensive discount system.
+
+Base Discount Tiers by Years of Service:
+- 0-2 years of service: 10% discount
+- 3-5 years of service: 15% discount
+- 6-10 years of service: 20% discount
+- 11+ years of service: 25% discount
+
+Position-Based Multipliers (added to base discount):
+- Entry-Level: +0% (no additional discount)
+- Mid-Level: +5% additional discount
+- Senior: +10% additional discount
+- Executive: +15% additional discount
+
+Maximum Annual Benefits:
+- Entry-Level: $500 maximum annual benefit
+- Mid-Level: $750 maximum annual benefit
+- Senior: $1,000 maximum annual benefit
+- Executive: $1,500 maximum annual benefit
+
+Eligibility Requirements:
+- Full-time employment status required
+- Must be employed for minimum 90 days
+- One bicycle purchase per calendar year
+- Receipt and proof of purchase required
+- Bicycle must be used for commuting or fitness purposes
+
+Calculation Examples:
+- Example 1: Mid-level employee with 6 years of service
+  Base discount: 20% + Position multiplier: 5% = 25% total discount
+  Maximum benefit: $750 annually
+
+- Example 2: Senior employee with 3 years of service
+  Base discount: 15% + Position multiplier: 10% = 25% total discount
+  Maximum benefit: $1,000 annually
+
+- Example 3: Executive with 12 years of service
+  Base discount: 25% + Position multiplier: 15% = 40% total discount
+  Maximum benefit: $1,500 annually
+
+3. VACATION DAY ESCALATION SYSTEM
+=================================
+
+The Vacation Day Escalation System provides additional paid time off based on years of continuous service, beyond the standard vacation allocation.
+
+Standard Vacation Days:
+- Entry-Level: 15 days annually
+- Mid-Level: 18 days annually
+- Senior: 20 days annually
+- Executive: 25 days annually
+
+Additional Vacation Days by Service Years:
+- 2-3 years: +2 additional vacation days (total: 17/20/22/27 days)
+- 4-6 years: +4 additional vacation days (total: 19/22/24/29 days)
+- 7-10 years: +6 additional vacation days (total: 21/24/26/31 days)
+- 11-15 years: +8 additional vacation days (total: 23/26/28/33 days)
+- 16+ years: +10 additional vacation days (total: 25/28/30/35 days)
+
+Special Provisions:
+- Vacation days do not roll over unless approved by direct manager
+- Maximum carryover: 5 days to following year
+- Vacation days are prorated for part-time employees
+- New hires receive prorated vacation based on start date
+
+4. HEALTH INSURANCE CONTRIBUTION PROGRAM
+========================================
+
+The company contributes to employee health insurance premiums based on years of service and family coverage needs.
+
+Company Contribution Percentages:
+- 0-1 years: 70% of premium cost
+- 2-3 years: 75% of premium cost
+- 4-5 years: 80% of premium cost
+- 6-8 years: 85% of premium cost
+- 9-12 years: 90% of premium cost
+- 13+ years: 95% of premium cost
+
+Family Coverage Multipliers:
+- Employee only: Base contribution
+- Employee + spouse: Base contribution + 15%
+- Employee + children: Base contribution + 20%
+- Employee + family: Base contribution + 25%
+
+Monthly Premium Costs (2025):
+- Employee only: $450
+- Employee + spouse: $720
+- Employee + children: $680
+- Employee + family: $890
+
+Calculation Example:
+- Employee with 7 years of service, family coverage
+- Base contribution: 85% of $890 = $756.50
+- Employee pays: $890 - $756.50 = $133.50 monthly
+
+5. GYM MEMBERSHIP REIMBURSEMENT
+==============================
+
+The Gym Membership Reimbursement Program promotes employee wellness and fitness participation.
+
+Reimbursement Percentages by Service Years:
+- 0-2 years: 40% of membership cost
+- 3-5 years: 50% of membership cost
+- 6-8 years: 60% of membership cost
+- 9-12 years: 70% of membership cost
+- 13+ years: 80% of membership cost
+
+Monthly Reimbursement Caps:
+- Entry-Level: $40 maximum monthly reimbursement
+- Mid-Level: $60 maximum monthly reimbursement
+- Senior: $80 maximum monthly reimbursement
+- Executive: $100 maximum monthly reimbursement
+
+Eligible Facilities:
+- Licensed fitness centers and gyms
+- Yoga and pilates studios
+- Swimming facilities
+- Rock climbing gyms
+- Martial arts studios
+
+Requirements:
+- Active membership for minimum 3 months
+- Proof of regular attendance (check-in records)
+- Receipt submission within 30 days
+- Maximum one membership reimbursement per employee
+
+6. PROFESSIONAL DEVELOPMENT BUDGET
+==================================
+
+The Professional Development Budget supports continuous learning and career advancement.
+
+Annual Budget Allocation:
+Base Budget by Position:
+- Entry-Level: $800 annually
+- Mid-Level: $1,200 annually
+- Senior: $1,800 annually
+- Executive: $2,500 annually
+
+Service Year Multipliers:
+- 0-2 years: 1.0x (no multiplier)
+- 3-5 years: 1.1x multiplier
+- 6-10 years: 1.2x multiplier
+- 11+ years: 1.3x multiplier
+
+Calculation Examples:
+- Mid-level employee with 7 years: $1,200 × 1.2 = $1,440 annually
+- Senior employee with 4 years: $1,800 × 1.1 = $1,980 annually
+- Executive with 12 years: $2,500 × 1.3 = $3,250 annually
+
+Approved Expenses:
+- Professional certifications and licenses
+- Industry conferences and workshops
+- Online courses and training programs
+- Professional association memberships
+- Educational books and materials
+- Coaching and mentoring programs
+
+7. HOME OFFICE ALLOWANCE PROGRAM
+================================
+
+The Home Office Allowance supports remote work setup and productivity.
+
+Annual Allowance by Position:
+- Entry-Level: $300 annually
+- Mid-Level: $500 annually
+- Senior: $750 annually
+- Executive: $1,000 annually
+
+Eligibility Requirements:
+- Remote work arrangement approved by manager
+- Minimum 50% remote work schedule
+- Full-time employment status
+- Completion of ergonomic assessment
+
+Service Year Bonus:
+- 3+ years: +$100 bonus
+- 6+ years: +$200 bonus
+- 10+ years: +$300 bonus
+
+Approved Purchases:
+- Ergonomic desk chairs
+- Standing desks or desk converters
+- Monitor arms and laptop stands
+- Keyboard and mouse accessories
+- Lighting equipment
+- Cable management solutions
+
+8. 401(K) MATCHING PROGRAM
+=========================
+
+The 401(k) Matching Program helps employees build retirement savings through company contributions.
+
+Company Match Percentages:
+- 0-2 years: 50% match up to 6% of salary
+- 3-5 years: 75% match up to 6% of salary
+- 6-10 years: 100% match up to 6% of salary
+- 11+ years: 125% match up to 6% of salary (max 7.5% company contribution)
+
+Vesting Schedule:
+- 0-1 years: 0% vested
+- 2 years: 25% vested
+- 3 years: 50% vested
+- 4 years: 75% vested
+- 5+ years: 100% vested
+
+Calculation Examples:
+- Employee with 8 years, $60,000 salary, contributing 6%
+- Employee contribution: $3,600
+- Company match: 100% of 6% = $3,600
+- Total annual contribution: $7,200
+
+9. CHILDCARE ASSISTANCE PROGRAM
+===============================
+
+The Childcare Assistance Program provides financial support for eligible employees with dependent children.
+
+Monthly Subsidy Amounts:
+- One child: $200 monthly
+- Two children: $350 monthly
+- Three or more children: $500 monthly
+
+Eligibility Requirements:
+- Child must be under 13 years of age
+- Licensed childcare facility required
+- Minimum 6 months of employment
+- Household income limits apply
+
+Income Limits (2025):
+- Single parent: $75,000 maximum household income
+- Two-parent household: $100,000 maximum household income
+
+Service Year Multipliers:
+- 0-2 years: 1.0x (base subsidy)
+- 3-5 years: 1.1x multiplier
+- 6+ years: 1.2x multiplier
+
+10. TRANSPORTATION SUBSIDY PROGRAM
+==================================
+
+The Transportation Subsidy Program supports sustainable commuting options.
+
+Monthly Subsidy by Transportation Type:
+- Public transit: Up to $150 monthly
+- Carpooling/rideshare: Up to $100 monthly
+- Parking (urban locations): Up to $200 monthly
+- Electric vehicle charging: Up to $75 monthly
+
+Service Year Coverage Percentages:
+- 0-2 years: 50% of actual cost
+- 3-5 years: 65% of actual cost
+- 6-10 years: 80% of actual cost
+- 11+ years: 100% of actual cost
+
+Requirements:
+- Regular commute to office location
+- Receipts and documentation required
+- Minimum 3 days per week office attendance
+- Enrollment in payroll deduction program
+
+11. ELIGIBILITY REQUIREMENTS AND DEFINITIONS
+============================================
+
+General Eligibility:
+- All benefits require active employment status
+- Part-time employees receive prorated benefits (minimum 20 hours/week)
+- Temporary and contract employees are not eligible
+- Benefits begin first day of month following hire date
+
+Years of Service Calculation:
+- Based on continuous employment with the company
+- Approved leaves of absence do not break service
+- Rehired employees may have service years combined at company discretion
+
+Position Level Determination:
+- Based on job title and responsibilities
+- Position changes affect benefits beginning next pay period
+- Promotional increases are retroactive to promotion date
+
+12. CALCULATION EXAMPLES AND EDGE CASES
+=======================================
+
+Complex Scenario 1: Senior Software Engineer
+- Position: Senior (8 years of service)
+- Bicycle benefit: 20% + 10% = 30% discount, $1,000 max
+- Vacation days: 20 base + 6 additional = 26 days total
+- Health insurance: 85% company contribution
+- Gym reimbursement: 60% of cost, $80 monthly max
+- Professional development: $1,800 × 1.2 = $2,160 annually
+
+Complex Scenario 2: Mid-Level Marketing Coordinator
+- Position: Mid-Level (5 years of service)
+- Bicycle benefit: 15% + 5% = 20% discount, $750 max
+- Vacation days: 18 base + 4 additional = 22 days total
+- Health insurance: 80% company contribution
+- Gym reimbursement: 50% of cost, $60 monthly max
+- Professional development: $1,200 × 1.1 = $1,320 annually
+
+Edge Case: Executive with 15 years, family coverage
+- Health insurance: 95% of $890 = $845.50 company contribution
+- Employee pays: $44.50 monthly
+- 401(k) match: 125% up to 6% of salary
+- Childcare assistance: $500 × 1.2 = $600 monthly (if eligible)
+
+13. POLICY CHANGES AND EFFECTIVE DATES
+======================================
+
+Amendment Process:
+- Benefits may be modified annually during open enrollment
+- 30-day notice required for significant changes
+- Emergency changes require board approval
+
+Grandfathering Provisions:
+- Existing employees maintain benefit levels for 12 months after changes
+- Service years are protected during organizational restructuring
+- Position reclassifications do not reduce existing benefits
+
+Contact Information:
+- Human Resources Department: hr@company.com
+- Benefits Coordinator: benefits@company.com
+- Employee Assistance Program: 1-800-EAP-HELP
+
+This document supersedes all previous benefits documentation and serves as the official policy reference for all employee benefits calculations and determinations.
+
+END OF DOCUMENT
